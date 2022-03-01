@@ -1,0 +1,8 @@
+module-info.class
+swt6\modular\beans\impl\SimpleTimer.class
+swt6\modular\beans\TimerProvider.class
+swt6\modular\beans\impl\SimpleTimerProvider.class
+swt6\modular\beans\Timer.class
+swt6\modular\beans\TimerListener.class
+swt6\modular\beans\TimerEvent.class
+swt6\modular\beans\TimerFactory.class

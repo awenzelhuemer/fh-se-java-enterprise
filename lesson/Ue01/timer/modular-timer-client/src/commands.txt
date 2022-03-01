@@ -1,0 +1,3 @@
+java --module-path "./modular-timer-client;./modular-timer-bean" --module swt.modular.clients/swt6.modular.clients.TimerClient
+java --module-path "./modular-timer-client;./modular-timer-bean" --describe-module swt.modular.beans
+java --module-path "./modular-timer-client;./modular-timer-bean" --describe-module swt.modular.clients
