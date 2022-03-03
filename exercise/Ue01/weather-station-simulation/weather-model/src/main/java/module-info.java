@@ -1,3 +1,3 @@
 module weather.model {
-    exports swt6.weather.beans;
+    exports swt6.weather.sensors;
 }

@@ -1,4 +1,4 @@
-package swt6.weather.beans;
+package swt6.weather.sensors;
 
 import java.util.EventObject;
 

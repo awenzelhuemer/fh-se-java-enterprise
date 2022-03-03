@@ -1,4 +1,0 @@
---patch-module
-swt.modular.clients=_
---add-reads
-swt.modular.clients=ALL-UNNAMED
