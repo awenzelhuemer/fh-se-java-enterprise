@@ -42,7 +42,17 @@ public class SimpleStation implements Station {
     }
 
     @Override
+    public void start() {
+        sensor.start();
+    }
+
+    @Override
+    public void stop() {
+        sensor.stop();
+    }
+
+    @Override
     public void close() throws Exception {
-        sensor.close();
+        sensor.stop();
     }
 }

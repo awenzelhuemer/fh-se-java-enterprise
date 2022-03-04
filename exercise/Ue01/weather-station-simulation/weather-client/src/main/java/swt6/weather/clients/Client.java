@@ -17,13 +17,12 @@ public class Client {
         var sensor = getBestSensor("temperature");
 
         try(var station = new StationFactory().getStation(sensor)) {
-            logger.info("Station initialized.");
-            logger.info("Current value: %.2f, Average: %.2f".formatted(station.getLatestMeasurement(), station.getAverageMeasurement()));
+            station.start();
+            System.out.printf("Current value: %.2f, Average: %.2f%n", station.getLatestMeasurement(), station.getAverageMeasurement());
 
-            logger.info("Wait 6 seconds ...");
+            System.out.println("Wait 6 seconds ...");
             Thread.sleep(6000);
-            logger.info("Current value: %.2f, Average: %.2f".formatted(station.getLatestMeasurement(), station.getAverageMeasurement()));
-
+            System.out.printf("Current value: %.2f, Average: %.2f%n", station.getLatestMeasurement(), station.getAverageMeasurement());
         } catch (Exception e) {
             logger.error("Station crashed.", e);
         }

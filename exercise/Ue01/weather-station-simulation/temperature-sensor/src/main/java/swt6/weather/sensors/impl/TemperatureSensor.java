@@ -23,12 +23,11 @@ public class TemperatureSensor implements Sensor {
     private static final int INTERVAL = 1500;
 
     public TemperatureSensor() {
-        start();
+        timer.set(new Timer());
     }
 
-    private void start() {
+    public void start() {
         logger.info("Sensor measurement started.");
-        timer.set(new Timer());
         timer.get().schedule(new TimerTask() {
             @Override
             public void run() {
@@ -36,6 +35,11 @@ public class TemperatureSensor implements Sensor {
                 fireEvent(new SensorEvent(TemperatureSensor.this, new Measurement(randomValue, "°C", LocalDateTime.now())));
             }
         }, 0, INTERVAL);
+    }
+
+    public void stop() {
+        logger.info("Sensor measurement stopped.");
+        timer.get().cancel();
     }
 
     private void fireEvent(SensorEvent event) {
@@ -54,8 +58,6 @@ public class TemperatureSensor implements Sensor {
 
     @Override
     public void close() {
-        logger.info("Sensor measurement stopped.");
-        listeners.clear();
-        timer.get().cancel();
+        stop();
     }
 }
