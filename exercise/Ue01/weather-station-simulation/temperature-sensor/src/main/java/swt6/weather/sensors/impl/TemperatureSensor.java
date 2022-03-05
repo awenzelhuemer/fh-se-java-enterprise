@@ -21,6 +21,7 @@ public class TemperatureSensor implements Sensor {
     private static final Logger logger = LoggerFactory.getLogger(TemperatureSensor.class);
     private final Random random = new Random();
     private static final int INTERVAL = 1500;
+    private boolean isRunning = false;
 
     public TemperatureSensor() {
         timer.set(new Timer());
@@ -28,6 +29,10 @@ public class TemperatureSensor implements Sensor {
 
     public void start() {
         logger.info("Sensor measurement started.");
+        if(isRunning){
+            throw new IllegalArgumentException("Measurement is already running.");
+        }
+        isRunning = true;
         timer.get().schedule(new TimerTask() {
             @Override
             public void run() {
@@ -39,6 +44,7 @@ public class TemperatureSensor implements Sensor {
 
     public void stop() {
         logger.info("Sensor measurement stopped.");
+        isRunning = false;
         timer.get().cancel();
     }
 

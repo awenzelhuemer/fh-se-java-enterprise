@@ -17,7 +17,7 @@ public class Client {
         var sensor = getBestSensor("temperature");
 
         try(var station = new StationFactory().getStation(sensor)) {
-            station.start();
+
             System.out.printf("Current value: %.2f, Average: %.2f%n", station.getLatestMeasurement(), station.getAverageMeasurement());
 
             System.out.println("Wait 6 seconds ...");
