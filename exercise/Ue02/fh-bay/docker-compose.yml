@@ -9,5 +9,3 @@ services:
       MYSQL_ROOT_PASSWORD: "Test1234"
       MYSQL_DATABASE: "fh-bay"
       TZ: "Europe/Vienna"
-    security_opt:
-      - seccomp:unconfined
