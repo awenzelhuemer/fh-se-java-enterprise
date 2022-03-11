@@ -1,9 +1,6 @@
 package swt6.dal.domain;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,6 +9,7 @@ public class Category extends BaseEntity {
 
     private String name;
 
+    @JoinTable(name = "Category_Relations", joinColumns = @JoinColumn(name = "Parent_Id"), inverseJoinColumns = @JoinColumn(name = "Child_Id"))
     @OneToMany(cascade = CascadeType.MERGE)
     private Set<Category> subCategories = new HashSet<>();
 
@@ -42,7 +40,7 @@ public class Category extends BaseEntity {
     }
 
     public void addSubCategory(Category category) {
-        subCategories.add(category);
+        this.subCategories.add(category);
     }
 
     public Set<Article> getArticles() {

@@ -64,6 +64,6 @@ public class Bid extends BaseEntity {
     @Override
     public String toString() {
         var formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        return amount + "€ from " + bidder + " at " + timestamp.format(formatter);
+        return amount + "EUR from " + bidder + " at " + timestamp.format(formatter);
     }
 }

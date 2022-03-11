@@ -147,7 +147,7 @@ public class Article extends BaseEntity {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
         return name + " (" + description + ")" +
-                " prices: (initial " + initialPrice + "€ final " + finalPrice + "€)" +
+                " prices: (initial " + initialPrice + "EUR final " + finalPrice + "EUR)" +
                 " time range: " + start.format(formatter) + " - " + end.format(formatter) +
                 " status: " + status;
     }

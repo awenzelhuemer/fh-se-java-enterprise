@@ -23,7 +23,7 @@ public class Customer extends BaseEntity {
     @AttributeOverride(name = "street", column = @Column(name = "deliveryAddress_street"))
     private Address deliveryAddress;
 
-    @OneToMany(mappedBy = "customer", cascade = { CascadeType.MERGE}, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.MERGE, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Payment> payments = new HashSet<>();
 
     public Customer() {
