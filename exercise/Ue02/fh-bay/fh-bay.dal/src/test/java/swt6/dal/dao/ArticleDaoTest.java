@@ -244,4 +244,87 @@ public class ArticleDaoTest extends BaseTest {
         var result = dao.findByNameAndDescription("Random search string");
         assertEquals(0, result.size());
     }
+
+    @Test
+    public void findBySeller_withData_returnsArticles() {
+
+        Customer customer = new Customer("Andreas", "Wenzelhuemer",
+                new Address("4070", "Pupping", "Waschpoint 10"),
+                new Address("4070", "Pupping", "Waschpoint 10"));
+
+        customer = DaoFactory.getCustomerDao().insert(customer);
+
+        Article article = new Article(
+                "65 Zoll Sony TV",
+                "New modern OLED TV.",
+                23.0,
+                40.23,
+                LocalDateTime.of(2021, 3, 10, 10, 0),
+                LocalDateTime.of(2021, 3, 10, 15, 0),
+                customer,
+                null,
+                null,
+                ArticleStatus.Sold
+        );
+        var articleDao = DaoFactory.getArticleDao();
+        article = articleDao.insert(article);
+
+
+        assertEquals(1, articleDao.findBySeller(customer).size());
+    }
+
+    @Test
+    public void findByBidder_withData_returnsArticles() {
+
+        Customer customer = new Customer("Andreas", "Wenzelhuemer",
+                new Address("4070", "Pupping", "Waschpoint 10"),
+                new Address("4070", "Pupping", "Waschpoint 10"));
+
+        customer = DaoFactory.getCustomerDao().insert(customer);
+
+        Article article = new Article(
+                "65 Zoll Sony TV",
+                "New modern OLED TV.",
+                23.0,
+                40.23,
+                LocalDateTime.of(2021, 3, 10, 10, 0),
+                LocalDateTime.of(2021, 3, 10, 15, 0),
+                null,
+                null,
+                customer,
+                ArticleStatus.Sold
+        );
+        var articleDao = DaoFactory.getArticleDao();
+        article = articleDao.insert(article);
+
+        assertEquals(1, articleDao.findByBidder(customer).size());
+    }
+
+    @Test
+    public void findByBuyer_withData_returnsArticles() {
+
+        Customer customer = new Customer("Andreas", "Wenzelhuemer",
+                new Address("4070", "Pupping", "Waschpoint 10"),
+                new Address("4070", "Pupping", "Waschpoint 10"));
+
+        customer = DaoFactory.getCustomerDao().insert(customer);
+
+        Article article = new Article(
+                "65 Zoll Sony TV",
+                "New modern OLED TV.",
+                23.0,
+                40.23,
+                LocalDateTime.of(2021, 3, 10, 10, 0),
+                LocalDateTime.of(2021, 3, 10, 15, 0),
+                null,
+                customer,
+                null,
+                ArticleStatus.Sold
+        );
+
+        var articleDao = DaoFactory.getArticleDao();
+        article = articleDao.insert(article);
+
+        assertEquals(1, articleDao.findByBuyer(customer).size());
+    }
 }
