@@ -1,0 +1,12 @@
+swt6\orm\domain\LogbookEntry_.class
+swt6\util\JpaUtil.class
+swt6\orm\domain\PermanentEmployee.class
+swt6\orm\domain\Address_.class
+swt6\orm\domain\LogbookEntry.class
+swt6\orm\domain\Employee.class
+swt6\orm\domain\Employee_.class
+swt6\orm\domain\PermanentEmployee_.class
+swt6\orm\domain\jpa\WorkLogManager.class
+swt6\orm\domain\Address.class
+swt6\orm\domain\TemporaryEmployee_.class
+swt6\orm\domain\TemporaryEmployee.class

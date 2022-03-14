@@ -9,8 +9,10 @@ public class Category extends BaseEntity {
 
     private String name;
 
-    @JoinTable(name = "Category_Relations", joinColumns = @JoinColumn(name = "Parent_Id"), inverseJoinColumns = @JoinColumn(name = "Child_Id"))
-    @OneToMany(cascade = CascadeType.MERGE)
+    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+    private Category parent;
+
+    @OneToMany(cascade = CascadeType.MERGE, mappedBy = "parent")
     private Set<Category> subCategories = new HashSet<>();
 
     @ManyToMany
@@ -19,8 +21,9 @@ public class Category extends BaseEntity {
     public Category() {
     }
 
-    public Category(String name) {
+    public Category(String name, Category parent) {
         this.name = name;
+        this.parent = parent;
     }
 
     public String getName() {
@@ -39,8 +42,29 @@ public class Category extends BaseEntity {
         this.subCategories = subCategories;
     }
 
-    public void addSubCategory(Category category) {
-        this.subCategories.add(category);
+    public void addSubCategory(Category subCategory) {
+        if(subCategory.getParent() != null) {
+            subCategory.getParent().getSubCategories().remove(subCategory);
+        }
+
+        this.subCategories.add(subCategory);
+        subCategory.setParent(this);
+    }
+
+    public Category getParent() {
+        return parent;
+    }
+
+    public void setParent(Category parent) {
+        this.parent = parent;
+    }
+
+    public void attachParent(Category parent) {
+        if(this.parent != null) {
+            this.parent.getSubCategories().remove(this);
+        }
+        this.parent = parent;
+        this.parent.getSubCategories().add(this);
     }
 
     public Set<Article> getArticles() {
@@ -53,6 +77,10 @@ public class Category extends BaseEntity {
 
     @Override
     public String toString() {
-        return getName();
+        if(getParent() != null) {
+            return getParent() + " - " + getName();
+        } else {
+            return getName();
+        }
     }
 }

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b95ff672-00a9-489d-b47f-5a93a00344fc" name="Changes" comment="Add ArticleDao tests">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a617a31a-40c1-42e3-bc23-fd1fa81110a7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a617a31a-40c1-42e3-bc23-fd1fa81110a7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diagrams/class-diagram.svg" beforeDir="false" afterPath="$PROJECT_DIR$/diagrams/class-diagram.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diagrams/er-diagram.svg" beforeDir="false" afterPath="$PROJECT_DIR$/diagrams/er-diagram.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fh-bay.dal/src/main/java/swt6/dal/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/fh-bay.dal/src/main/java/swt6/dal/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fh-bay.dal/src/main/java/swt6/dal/domain/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/fh-bay.dal/src/main/java/swt6/dal/domain/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fh-bay.dal/src/test/java/swt6/dal/dao/CategoryDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/fh-bay.dal/src/test/java/swt6/dal/dao/CategoryDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fh-bay.dal/target/generated-sources/annotations/swt6/dal/domain/Category_.java" beforeDir="false" afterPath="$PROJECT_DIR$/fh-bay.dal/target/generated-sources/annotations/swt6/dal/domain/Category_.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fh-bay.dal/target/surefire-reports/TEST-swt6.dal.dao.CategoryDaoTest.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectId" id="26BlEPpBa6tBEK8gQiocNFFKuKP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="flattenPackages" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="h2&#10;mysql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/diagrams" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.28735632" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Andi\Documents\GitHub\fh-se-swt\exercise\Ue02\fh-bay\fh-bay.dal\src\test" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Andi\Documents\GitHub\fh-se-swt\exercise\Ue02\fh-bay\diagrams" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="swt6.dal.dao" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="swt6.dal.dao.impl" />
+      <recent name="swt6.dal.dao" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Client">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="swt6.dal.client.Client" />
+      <module name="fh-bay.dal" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="swt6.dal.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Run Tests" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="fh-bay.dal" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="swt6.dal.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="swt6.dal.dao" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/fh-bay.dal/src/test" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Start database" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="services">
+            <list>
+              <option value="mysql" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Client" />
+      <item itemvalue="Docker.Start database" />
+      <item itemvalue="JUnit.Run Tests" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Client" />
+        <item itemvalue="JUnit.Run Tests" />
+        <item itemvalue="Docker.Start database" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b95ff672-00a9-489d-b47f-5a93a00344fc" name="Changes" comment="" />
+      <created>1646904750824</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1646904750824</updated>
+      <workItem from="1646904752536" duration="25318000" />
+      <workItem from="1646941418021" duration="743000" />
+      <workItem from="1646984031709" duration="1502000" />
+      <workItem from="1646985571804" duration="1951000" />
+      <workItem from="1647256877746" duration="1980000" />
+    </task>
+    <task id="LOCAL-00001" summary="Add in memory db and unit tests">
+      <created>1646914026542</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1646914026542</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Improve tests">
+      <created>1646918027440</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1646918027440</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add generated files and encoding">
+      <created>1646920491410</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1646920491410</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add categories">
+      <created>1646934830214</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1646934830214</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Finalize exercise">
+      <created>1646940615103</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1646940615103</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add documentation">
+      <created>1646986408789</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1646986408789</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add ArticleDao tests">
+      <created>1646986934787</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1646986934787</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Add in memory db and unit tests" />
+    <MESSAGE value="Improve tests" />
+    <MESSAGE value="Add generated files and encoding" />
+    <MESSAGE value="Add categories" />
+    <MESSAGE value="Finalize exercise" />
+    <MESSAGE value="Add documentation" />
+    <MESSAGE value="Add ArticleDao tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add ArticleDao tests" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="bid1" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

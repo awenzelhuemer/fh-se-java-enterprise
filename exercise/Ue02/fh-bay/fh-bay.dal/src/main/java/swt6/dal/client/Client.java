@@ -53,16 +53,14 @@ public class Client {
             throw ex;
         }
 
-        Category subcategory;
+        Category category;
 
         try {
             System.out.println("---- Add categories ----");
             var categoryDao = DaoFactory.getCategoryDao();
-            var category = new Category("Clothes");
-            category.addSubCategory(new Category("Jackets"));
+            category = new Category("Jackets", new Category("Clothes", null));
             category = categoryDao.insert(category);
-            subcategory = category.getSubCategories().stream().findFirst().get();
-            System.out.println(category + " - " + subcategory);
+            System.out.println(category);
 
             JpaUtil.commit();
         } catch (Exception ex) {
@@ -76,7 +74,7 @@ public class Client {
             System.out.println("---- Add article and assign category ----");
             var articleDao = DaoFactory.getArticleDao();
             article = new Article("Softshell-Jacket", "Softshell-Jacket in size L", 69.99, 0, LocalDateTime.now(), LocalDateTime.now().plusHours(4), customer1, null, null, ArticleStatus.Offered);
-            article.assignCategory(subcategory);
+            article.assignCategory(category);
             article = articleDao.insert(article);
             System.out.println(article);
             System.out.println("Categories: ");

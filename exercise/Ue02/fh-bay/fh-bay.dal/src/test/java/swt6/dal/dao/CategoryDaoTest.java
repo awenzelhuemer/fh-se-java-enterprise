@@ -13,33 +13,28 @@ public class CategoryDaoTest extends BaseTest {
 
         var categoryDao = DaoFactory.getCategoryDao();
 
-        Category category = new Category("Electronics");
-
-        Category subCategory = new Category("TVs");
-        category.addSubCategory(subCategory);
+        Category category = new Category("TVs", new Category("Electronics", null));
 
         category = categoryDao.insert(category);
 
         var result = categoryDao.findById(category.getId());
         assertNotNull(result);
-        assertEquals(1, result.getSubCategories().size());
+        assertNotNull(result.getParent());
     }
 
     @Test
     public void delete_withExistingCategory_deletesCategory() {
         var categoryDao = DaoFactory.getCategoryDao();
 
-        Category category = new Category("Electronics");
-
-        Category subCategory = new Category("TVs");
-        category.addSubCategory(subCategory);
+        Category category = new Category("TVs", new Category("Electronics", null));
 
         category = categoryDao.insert(category);
 
         categoryDao.delete(category.getId());
 
+        // Parent should not be deleted
         assertNull(categoryDao.findById(category.getId()));
-        assertNotNull(categoryDao.findById(category.getSubCategories().stream().findFirst().get().getId()));
+        assertNotNull(categoryDao.findById(category.getParent().getId()));
     }
 
     @Test
@@ -58,10 +53,7 @@ public class CategoryDaoTest extends BaseTest {
     public void findById_withExistingCategory_returnsCategory() {
         var categoryDao = DaoFactory.getCategoryDao();
 
-        Category category = new Category("Electronics");
-
-        Category subCategory = new Category("TVs");
-        category.addSubCategory(subCategory);
+        Category category = new Category("TVs", new Category("Electronics", null));
 
         category = categoryDao.insert(category);
 
