@@ -53,10 +53,7 @@ public abstract class BaseDaoImpl<T extends BaseEntity> implements BaseDao<T> {
             throw new RuntimeException("Entity does not exist.");
         }
 
-        deleteDependencies();
-
         em.remove(storedEntity);
-
     }
 
     @Override
@@ -67,8 +64,4 @@ public abstract class BaseDaoImpl<T extends BaseEntity> implements BaseDao<T> {
     }
 
     protected abstract Class<T> getEntityType();
-
-    protected void deleteDependencies() {
-        // No dependencies to delete
-    }
 }
