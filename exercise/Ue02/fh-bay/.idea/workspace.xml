@@ -4,132 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b95ff672-00a9-489d-b47f-5a93a00344fc" name="Changes" comment="Add ArticleDao tests">
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/Kurztest1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/README_DO_NOT_TOUCH_FILES.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/db.lck" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/log/README_DO_NOT_TOUCH_FILES.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/log/log.ctrl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/log/log1.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/log/logmirror.ctrl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/README_DO_NOT_TOUCH_FILES.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c10.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c101.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c111.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c121.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c130.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c141.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c150.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c161.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c171.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c180.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c191.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c1a1.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c1b1.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c1c0.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c1d1.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c1e0.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c1f1.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c20.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c200.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c211.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c221.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c230.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c241.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c251.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c260.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c271.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c281.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c290.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c2a1.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c2b1.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c2c1.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c2d0.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c2e1.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c2f0.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c300.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c31.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c311.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c321.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c331.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c340.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c351.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c361.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c371.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c380.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c391.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c3a1.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c3b1.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c3c0.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c3d1.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c3e1.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c3f1.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c400.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c41.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c411.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c421.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c430.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c441.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c451.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c461.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c470.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c481.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c51.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c60.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c71.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c81.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/c90.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/ca1.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/cb1.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/cc0.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/cd1.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/ce1.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/cf0.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/d490.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/d4a1.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/d4b0.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/d4c1.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/d4d0.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/d4f1.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/d501.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/d511.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/d521.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/d530.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/d541.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/d550.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/d561.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/d5a1.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/seg0/d5c1.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/data/WorkLogDb/service.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/src/main/java/swt6/domain/Address.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/src/main/java/swt6/domain/Channel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/src/main/java/swt6/domain/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/src/main/java/swt6/domain/jpa/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/src/main/java/swt6/util/JpaUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Kurztest1/src/main/resources/log4j.properties" afterDir="false" />
+    <list default="true" id="b95ff672-00a9-489d-b47f-5a93a00344fc" name="Changes" comment="Update kurztest">
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/intro-spring/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/intro-spring/src/main/java/swt6/spring/basics/aop/logic/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/intro-spring/src/main/java/swt6/spring/basics/aop/logic/EmployeeIdNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/intro-spring/src/main/java/swt6/spring/basics/aop/logic/WorkLogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/intro-spring/src/main/java/swt6/spring/basics/aop/logic/WorkLogServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/intro-spring/src/main/java/swt6/spring/basics/aop/test/AopTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/intro-spring/src/main/java/swt6/spring/basics/ioc/domain/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/intro-spring/src/main/java/swt6/spring/basics/ioc/logic/factorybased/WorkLogServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/intro-spring/src/main/java/swt6/spring/basics/ioc/test/IocTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/intro-spring/src/main/java/swt6/spring/basics/ioc/util/ConsoleLogger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/intro-spring/src/main/java/swt6/spring/basics/ioc/util/FileLogger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/intro-spring/src/main/java/swt6/spring/basics/ioc/util/Logger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/intro-spring/src/main/java/swt6/spring/basics/ioc/util/LoggerFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/intro-spring/src/main/java/swt6/util/PrintUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/intro-spring/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/intro-spring/src/main/resources/swt6/spring/basics/ioc/logic/factorybased/worklog.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/worklog-spring/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/worklog-spring/src/main/java/swt6/spring/worklog/dao/jdbc/EmployeeDaoJdbc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/worklog-spring/src/main/java/swt6/spring/worklog/domain/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/worklog-spring/src/main/java/swt6/spring/worklog/domain/LogbookEntry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/worklog-spring/src/main/java/swt6/spring/worklog/test/DbTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/worklog-spring/src/main/java/swt6/util/DbScriptRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/worklog-spring/src/main/java/swt6/util/PrintUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/worklog-spring/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/worklog-spring/src/main/resources/swt6/spring/worklog/test/CreateWorklogDbSchema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/worklog-spring/src/main/resources/swt6/spring/worklog/test/applicationContext-jdbc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/worklog-spring/src/main/resources/swt6/spring/worklog/test/jdbc.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fh-bay.dal/src/main/java/swt6/dal/dao/impl/BaseDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/fh-bay.dal/src/main/java/swt6/dal/dao/impl/BaseDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fh-bay.dal/target/surefire-reports/TEST-swt6.dal.dao.ArticleDaoTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fh-bay.dal/target/surefire-reports/TEST-swt6.dal.dao.ArticleDaoTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fh-bay.dal/target/surefire-reports/TEST-swt6.dal.dao.BidDaoTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fh-bay.dal/target/surefire-reports/TEST-swt6.dal.dao.BidDaoTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fh-bay.dal/target/surefire-reports/TEST-swt6.dal.dao.CategoryDaoTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fh-bay.dal/target/surefire-reports/TEST-swt6.dal.dao.CategoryDaoTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fh-bay.dal/target/surefire-reports/TEST-swt6.dal.dao.CustomerDaoTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fh-bay.dal/target/surefire-reports/TEST-swt6.dal.dao.CustomerDaoTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fh-bay.dal/target/surefire-reports/TEST-swt6.dal.dao.PaymentDaoTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fh-bay.dal/target/surefire-reports/TEST-swt6.dal.dao.PaymentDaoTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fh-bay.dal/target/surefire-reports/swt6.dal.dao.ArticleDaoTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fh-bay.dal/target/surefire-reports/swt6.dal.dao.ArticleDaoTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fh-bay.dal/target/surefire-reports/swt6.dal.dao.BidDaoTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fh-bay.dal/target/surefire-reports/swt6.dal.dao.BidDaoTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fh-bay.dal/target/surefire-reports/swt6.dal.dao.CategoryDaoTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fh-bay.dal/target/surefire-reports/swt6.dal.dao.CategoryDaoTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fh-bay.dal/target/surefire-reports/swt6.dal.dao.CustomerDaoTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fh-bay.dal/target/surefire-reports/swt6.dal.dao.CustomerDaoTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fh-bay.dal/target/surefire-reports/swt6.dal.dao.PaymentDaoTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fh-bay.dal/target/surefire-reports/swt6.dal.dao.PaymentDaoTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../kurztest1.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kurztest1.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +91,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../lesson/Ue03/projects-spring/pom.xml" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -255,9 +159,9 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.Client" />
       <item itemvalue="Docker.Start database" />
       <item itemvalue="JUnit.Run Tests" />
-      <item itemvalue="Application.Client" />
     </list>
     <recent_temporary>
       <list>
@@ -281,6 +185,7 @@
       <workItem from="1646985571804" duration="1951000" />
       <workItem from="1647256877746" duration="1980000" />
       <workItem from="1647293587227" duration="191000" />
+      <workItem from="1647327833126" duration="217000" />
     </task>
     <task id="LOCAL-00001" summary="Add in memory db and unit tests">
       <created>1646914026542</created>
@@ -331,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646986934787</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Update kurztest">
+      <created>1647327875701</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1647327875701</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -358,7 +270,8 @@
     <MESSAGE value="Finalize exercise" />
     <MESSAGE value="Add documentation" />
     <MESSAGE value="Add ArticleDao tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add ArticleDao tests" />
+    <MESSAGE value="Update kurztest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update kurztest" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
