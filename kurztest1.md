@@ -29,7 +29,6 @@ return  minProvider == null  ?  null  :  minProvider.getTimer(noTicks, interval)
 
 
 public interface TimerProvider {
-
     double timerResolution();
 
     Timer getTimer(int noTicks, int interval);
@@ -288,4 +287,65 @@ public class JpaUtil {
         }
     }
 }
+```
+
+Criteria Builder
+
+```java
+CriteriaBuilder cb = em.getCriteriaBuilder();
+CriteriaQuery<LogbookEntry> entryCQ = cb.createQuery(LogbookEntry.class);
+Root<LogbookEntry> entry = entryCQ.from(LogbookEntry.class);
+ParameterExpression<Employee> p = cb.parameter(Employee.class);
+
+entryCQ.where(cb.equal(entry.get(LogbookEntry_.employee), p)).select(entry);
+
+TypedQuery<LogbookEntry> entriesOfEmployeeQuery = em.createQuery(entryCQ);
+entriesOfEmployeeQuery.setParameter(p, employee);
+entriesOfEmployeeQuery.getResultList().forEach(System.out::println);
+```
+
+Annotations
+
+```java
+@Entity
+@Table(name = "EMPL_TABLE")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "employee_type", discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorValue("E")
+public class Employee {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Column(name = "F_N", nullable = false)
+    private String name;
+
+    @Embedded
+    @AttributeOverride(name = "zipCode", column = @Column(name = "address_zipCode"))
+    private Address address;
+
+    @Transient
+    private LocalDate dateOfBirth;
+
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "members")
+    private Set<Project> projects = new HashSet<>();
+
+    @Fetch(FetchMode.SELECT)
+    @OneToMany(
+            cascade = {CascadeType.MERGE, CascadeType.PERSIST },
+            mappedBy = "employee", orphanRemoval = true,
+            fetch = FetchType.LAZY
+    )
+    @JoinColumn(name = "emplId")
+    private Set<LogbookEntry> logbookEntries = new HashSet<>();
+
+    @ElementCollection
+    @CollectionTable(name = "EMPL_PHONES", joinColumns = @JoinColumn(name = "EMPL_ID"))
+    @Column(name = "PHONE_NR")
+    private Set<String> phones = new HashSet<>();
+}
+
+@Entity
+@Embeddable
+public class Address { }
 ```
