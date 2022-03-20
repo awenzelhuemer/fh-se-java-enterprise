@@ -10,23 +10,24 @@ import swt6.dal.domain.Customer;
 import swt6.dal.util.JpaUtil;
 import swt6.logic.ArticleLogic;
 
+import javax.inject.Inject;
 import java.time.LocalDateTime;
 import java.util.List;
 
 public class ArticleLogicImpl implements ArticleLogic {
 
-    // TODO Use spring di
-    private BidDao getBidDao() {
-        return DaoFactory.getBidDao();
-    }
+    @Inject
+    private BidDao bidDao;
 
-    private ArticleDao getArticleDao() {
-        return DaoFactory.getArticleDao();
+    @Inject
+    private ArticleDao articleDao;
+
+    public ArticleLogicImpl() {
     }
 
     @Override
     public Article insert(Article article) {
-        article = getArticleDao().insert(article);
+        article = articleDao.insert(article);
 
         // TODO Abstract
         JpaUtil.commit();
@@ -36,7 +37,6 @@ public class ArticleLogicImpl implements ArticleLogic {
 
     @Override
     public Article assignSellerAndBuyer(long articleId, Customer seller, Customer buyer) {
-        var articleDao = getArticleDao();
 
         var article = articleDao.findById(articleId).orElse(null);
 
@@ -61,8 +61,6 @@ public class ArticleLogicImpl implements ArticleLogic {
 
     @Override
     public List<Article> findByNameAndDescription(String searchTerm) {
-        var articleDao = getArticleDao();
-
         var articles = articleDao.findByNameAndDescription(searchTerm);
 
         // TODO Abstract
@@ -72,10 +70,6 @@ public class ArticleLogicImpl implements ArticleLogic {
     }
 
     public void addBid(long articleId, double amount, Customer bidder) {
-
-        var bidDao = getBidDao();
-        var articleDao = getArticleDao();
-
         var article = articleDao.findById(articleId).orElse(null);
 
         var previousBid = bidDao.findHighestBidByArticle(article);
@@ -114,10 +108,6 @@ public class ArticleLogicImpl implements ArticleLogic {
 
     @Override
     public void finalizeAuction(long articleId) {
-
-        var bidDao = getBidDao();
-        var articleDao = getArticleDao();
-
         var article = articleDao.findById(articleId).orElse(null);
 
         var previousBid = bidDao.findSecondHighestBidByArticle(article);

@@ -1,5 +1,6 @@
 package swt6.dal.dao.impl;
 
+import org.springframework.stereotype.Component;
 import swt6.dal.dao.ArticleDao;
 import swt6.dal.domain.Article;
 import swt6.dal.domain.ArticleStatus;
@@ -14,6 +15,7 @@ import javax.persistence.criteria.ParameterExpression;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
+@Component
 public class ArticleDaoImpl extends BaseDaoImpl<Article> implements ArticleDao {
     @Override
     protected Class<Article> getEntityType() {

@@ -1,10 +1,12 @@
 package swt6.dal.dao.impl;
 
+import org.springframework.stereotype.Component;
 import swt6.dal.dao.BidDao;
 import swt6.dal.domain.Article;
 import swt6.dal.domain.Bid;
 import swt6.dal.util.JpaUtil;
 
+@Component
 public class BidDaoImpl extends BaseDaoImpl<Bid> implements BidDao {
     @Override
     public Bid findHighestBidByArticle(Article article) {

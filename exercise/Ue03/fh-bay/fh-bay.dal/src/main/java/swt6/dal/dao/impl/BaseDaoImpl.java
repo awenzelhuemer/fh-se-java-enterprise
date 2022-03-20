@@ -20,8 +20,8 @@ public abstract class BaseDaoImpl<T extends BaseEntity> implements BaseDao<T> {
     public T insert(T entity) {
         EntityManager em = JpaUtil.getTransactedEntityManager();
 
-        if (entity.getId() == null) {
-            throw new IllegalArgumentException("Id of enity is not set.");
+        if (entity.getId() != null) {
+            throw new IllegalArgumentException("Id of entity is already set.");
         }
 
         return em.merge(entity);

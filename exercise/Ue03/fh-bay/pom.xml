@@ -25,10 +25,38 @@
         <junit.version>4.12</junit.version>
         <junit-jupiter.version>5.7.1</junit-jupiter.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <spring.version>5.3.15</spring.version>
+        <spring-data-bom.version>2021.1.1</spring-data-bom.version>
+        <spring-boot.version>2.6.3</spring-boot.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>javax.inject</groupId>
+                <artifactId>javax.inject</artifactId>
+                <version>1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>${spring.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-bom</artifactId>
+                <version>${spring-data-bom.version}</version>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <type>pom</type>
+                <version>${spring-boot.version}</version>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
@@ -47,6 +75,18 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
