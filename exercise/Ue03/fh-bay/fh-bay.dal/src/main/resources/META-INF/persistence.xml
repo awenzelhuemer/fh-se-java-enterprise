@@ -16,8 +16,8 @@
             <!-- JPA 2.0 standard properties -->
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/fh-bay?allowPublicKeyRetrieval=true&amp;useSSL=false"/>
-            <property name="javax.persistence.jdbc.user" value="root"/>
-            <property name="javax.persistence.jdbc.password" value="Test1234"/>
+            <property name="javax.persistence.jdbc.user" value="fh-bay"/>
+            <property name="javax.persistence.jdbc.password" value="toor"/>
 
             <!-- Hibernate EntityManager properties -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
