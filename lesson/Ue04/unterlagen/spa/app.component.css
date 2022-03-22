@@ -1,8 +1,0 @@
-.main-page {
-  padding-top: 50px;
-}
-
-:host ::ng-deep .page-title {
-  padding: 40px 15px;
-  text-align: center;
-}
