@@ -1,0 +1,17 @@
+GET http://localhost:8080/workLog/hello
+Accept: text/plain
+
+###
+
+GET http://localhost:8080/workLog/employees
+Accept: application/json
+
+###
+
+GET http://localhost:8080/workLog/employees/10
+Accept: application/json
+
+###
+
+GET http://localhost:8080/worklog/entries/1
+Accept: application/json

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "firstName": "Sepp",
+    "lastName": "Forcher",
+    "dateOfBirth": "1935-12-12"
+  },
+  {
+    "id": 5,
+    "firstName": "Alfred",
+    "lastName": "Kunz",
+    "dateOfBirth": "1944-08-10"
+  },
+  {
+    "id": 9,
+    "firstName": "Sigfried",
+    "lastName": "Hinz",
+    "dateOfBirth": "1954-05-03"
+  }
+]

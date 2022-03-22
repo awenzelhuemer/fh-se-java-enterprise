@@ -1,0 +1,309 @@
+GET http://localhost:8080/workLog/employees/10
+Accept: application/json
+
+<> 2022-03-22T123800.404.json
+
+###
+
+GET http://localhost:8080/workLog/employees
+Accept: application/json
+
+<> 2022-03-22T123800.200.json
+
+###
+
+GET http://localhost:8080/workLog/hello
+Accept: text/plain
+
+<> 2022-03-22T123800.200.txt
+
+###
+
+GET http://localhost:8080/workLog/employees/10
+Accept: application/json
+
+<> 2022-03-22T123759.404.json
+
+###
+
+GET http://localhost:8080/workLog/employees
+Accept: application/json
+
+<> 2022-03-22T123759.200.json
+
+###
+
+GET http://localhost:8080/workLog/hello
+Accept: text/plain
+
+<> 2022-03-22T123759.200.txt
+
+###
+
+GET http://localhost:8080/workLog/employees/10
+Accept: application/json
+
+<> 2022-03-22T123737.404.json
+
+###
+
+GET http://localhost:8080/workLog/employees
+Accept: application/json
+
+<> 2022-03-22T123737.200.json
+
+###
+
+GET http://localhost:8080/workLog/hello
+Accept: text/plain
+
+<> 2022-03-22T123737.200.txt
+
+###
+
+GET http://localhost:8080/workLog/employees/1
+Accept: application/json
+
+<> 2022-03-22T123723-1.200.json
+
+###
+
+GET http://localhost:8080/workLog/employees
+Accept: application/json
+
+<> 2022-03-22T123723.200.json
+
+###
+
+GET http://localhost:8080/workLog/hello
+Accept: text/plain
+
+<> 2022-03-22T123722-1.200.txt
+
+###
+
+GET http://localhost:8080/workLog/employees/1
+Accept: application/json
+
+<> 2022-03-22T123722-1.200.json
+
+###
+
+GET http://localhost:8080/workLog/employees
+Accept: application/json
+
+<> 2022-03-22T123722.200.json
+
+###
+
+GET http://localhost:8080/workLog/hello
+Accept: text/plain
+
+<> 2022-03-22T123722.200.txt
+
+###
+
+GET http://localhost:8080/workLog/employees/1
+Accept: application/json
+
+<> 2022-03-22T123632-1.200.json
+
+###
+
+GET http://localhost:8080/workLog/employees
+Accept: application/json
+
+<> 2022-03-22T123632.200.json
+
+###
+
+GET http://localhost:8080/workLog/hello
+Accept: text/plain
+
+<> 2022-03-22T123632.200.txt
+
+###
+
+GET http://localhost:8080/workLog/employees/9
+Accept: application/json
+
+<> 2022-03-22T123602-1.200.json
+
+###
+
+GET http://localhost:8080/workLog/employees
+Accept: application/json
+
+<> 2022-03-22T123602.200.json
+
+###
+
+GET http://localhost:8080/workLog/hello
+Accept: text/plain
+
+<> 2022-03-22T123601.200.txt
+
+###
+
+GET http://localhost:8080/workLog/employees/9
+Accept: application/json
+
+<> 2022-03-22T123528-1.200.json
+
+###
+
+GET http://localhost:8080/workLog/employees
+Accept: application/json
+
+<> 2022-03-22T123528.200.json
+
+###
+
+GET http://localhost:8080/workLog/hello
+Accept: text/plain
+
+<> 2022-03-22T123528.200.txt
+
+###
+
+GET http://localhost:8080/workLog/employees/5
+Accept: application/json
+
+<> 2022-03-22T123453-1.200.json
+
+###
+
+GET http://localhost:8080/workLog/employees
+Accept: application/json
+
+<> 2022-03-22T123453.200.json
+
+###
+
+GET http://localhost:8080/workLog/hello
+Accept: text/plain
+
+<> 2022-03-22T123453.200.txt
+
+###
+
+GET http://localhost:8080/workLog/employees/9
+Accept: application/json
+
+<> 2022-03-22T123429.200.json
+
+###
+
+GET http://localhost:8080/workLog/employees
+Accept: application/json
+
+<> 2022-03-22T123428.200.json
+
+###
+
+GET http://localhost:8080/workLog/hello
+Accept: text/plain
+
+<> 2022-03-22T123428.200.txt
+
+###
+
+GET http://localhost:8080/workLog/employees/9
+Accept: application/json
+
+<> 2022-03-22T123330.200.json
+
+###
+
+GET http://localhost:8080/workLog/employees
+Accept: application/json
+
+<> 2022-03-22T123329.200.json
+
+###
+
+GET http://localhost:8080/workLog/hello
+Accept: text/plain
+
+<> 2022-03-22T123329.200.txt
+
+###
+
+GET http://localhost:8080/workLog/employees
+Accept: application/json
+
+<> 2022-03-22T122958.200.json
+
+###
+
+GET http://localhost:8080/workLog/employees/9
+Accept: application/json
+
+<> 2022-03-22T122947.404.json
+
+###
+
+GET http://localhost:8080/workLog/employees
+Accept: application/json
+
+<> 2022-03-22T122926.200.json
+
+###
+
+GET http://localhost:8080/workLog/employees
+Accept: application/json
+
+<> 2022-03-22T122735.200.json
+
+###
+
+GET http://localhost:8080/workLog/employees
+Accept: application/json
+
+###
+
+GET http://localhost:8080/workLog/employees
+Accept: application/json
+
+###
+
+GET http://localhost:8080/workLog/employees
+Accept: application/json
+
+###
+
+GET http://localhost:8080/workLog/employees
+Accept: application/json
+
+###
+
+GET http://localhost:8080/workLog/employees
+Accept: application/json
+
+###
+
+GET http://localhost:8080/workLog/employees
+Accept: text/json
+
+###
+
+GET http://localhost:8080/workLog/hello
+Accept: text/plain
+
+<> 2022-03-22T111128.200.txt
+
+###
+
+GET http://localhost:8080/workLog/hello
+Accept: text/plain
+
+<> 2022-03-22T110719.200.txt
+
+###
+
+GET http://localhost:8080/workLog/hello
+
+<> 2022-03-22T110414.200.txt
+
+###
+
