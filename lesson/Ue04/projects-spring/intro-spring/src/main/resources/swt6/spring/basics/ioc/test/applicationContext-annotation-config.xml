@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="swt6.spring.basics.ioc.logic.annotationconfig, swt6.spring.basics.ioc.util" />
+    <!--    <bean id="consoleLogger" class="swt6.spring.basics.ioc.util.ConsoleLogger">-->
+<!--        <property name="prefix" value="INFO"/>-->
+<!--    </bean>-->
+
+<!--     <bean id="fileLogger" class="swt6.spring.basics.ioc.util.FileLogger" destroy-method="close">-->
+<!--            <constructor-arg name="fileName" value="test.txt"/>-->
+<!--    </bean>-->
+
+<!--    <context:annotation-config/>-->
+
+<!--    <bean id="workLog" class="swt6.spring.basics.ioc.logic.annotationconfig.WorkLogServiceImpl" />-->
+</beans>
