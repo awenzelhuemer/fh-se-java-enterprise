@@ -1,1 +1,4 @@
 .idea
+/fh-bay.client/target/
+/fh-bay.api/target/
+/fh-bay.dto/target/
