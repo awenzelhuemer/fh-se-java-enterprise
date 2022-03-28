@@ -80,7 +80,7 @@ Update or insert
 </bean>
 ```
 
-### 2.1. With JpaRepository
+### 2.2. With JpaRepository
 
 ```java
 @Repository
