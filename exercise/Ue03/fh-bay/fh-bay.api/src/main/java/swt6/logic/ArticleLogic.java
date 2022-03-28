@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface ArticleLogic {
 
+    boolean exists(long articleId);
+
     Article insert(Article article);
 
     Article assignSeller(long articleId, Customer seller);
@@ -18,4 +20,6 @@ public interface ArticleLogic {
     List<Article> findByNameAndDescription(String searchTerm);
 
     void addBid(long articleId, double amount, Customer bidder);
+
+    void finalizeBidding(long articleId);
 }

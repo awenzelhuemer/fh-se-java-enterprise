@@ -8,6 +8,8 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import swt6.dal.domain.Article;
 import swt6.dto.ArticleDto;
+import swt6.exceptions.InvalidOperationException;
+import swt6.exceptions.NotFoundException;
 import swt6.logic.ArticleLogic;
 
 import java.util.List;
@@ -38,5 +40,22 @@ public class ArticleController {
     public List<ArticleDto> filter(String term) {
         var articles = articleLogic.findByNameAndDescription(term);
         return articles.stream().map(a -> mapper.map(a, ArticleDto.class)).toList();
+    }
+
+    @PutMapping("/close-bid")
+    @Operation(summary = "Ends bidding", description = "Ends time for bidding immediately.")
+    @ApiResponse(responseCode = "200", description = "Success")
+    @ApiResponse(responseCode = "400", description = "Bad request")
+    @ApiResponse(responseCode = "404", description = "Not found")
+    public void finalizeBidding(@RequestBody long articleId) {
+        if (!articleLogic.exists(articleId)) {
+            throw new NotFoundException(articleId);
+        }
+
+        try {
+            articleLogic.finalizeBidding(articleId);
+        } catch (IllegalArgumentException ex) {
+            throw new InvalidOperationException(ex.getMessage());
+        }
     }
 }

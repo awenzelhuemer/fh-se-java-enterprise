@@ -1,11 +1,10 @@
 package swt6;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.shell.Availability;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellOption;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 import swt6.dto.ArticleDto;
 import swt6.dto.BidDto;
@@ -21,22 +20,23 @@ import java.util.Objects;
 @ShellComponent
 public class ShellCommands {
 
-    @Autowired
-    private RestTemplate restTemplate;
+    private final RestTemplate restTemplate;
 
     private CustomerDto currentCustomer;
 
+    public ShellCommands(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
+
     @ShellMethod("Lists all available customers.")
     public void listCustomers() {
-        var response = restTemplate.getForEntity("/customers", CustomerDto[].class);
+        var customers = restTemplate.getForObject("/customers", CustomerDto[].class);
 
-        var customers = response.getBody();
         if (Arrays.stream(Objects.requireNonNull(customers)).findAny().isEmpty()) {
             System.out.println("No customers found.");
         } else {
             System.out.println("Available customers: ");
-            for (var customer :
-                    customers) {
+            for (var customer : customers) {
                 System.out.println(customer);
             }
         }
@@ -51,12 +51,11 @@ public class ShellCommands {
         params.put("firstName", firstName);
         params.put("lastName", lastName);
 
-        var response = restTemplate.getForEntity("/customers/filter?firstName={firstName}&lastName={lastName}", CustomerDto.class, params);
-        if (response.getStatusCode() == HttpStatus.NOT_FOUND) {
+        try {
+            this.currentCustomer = restTemplate.getForObject("/customers/filter?firstName={firstName}&lastName={lastName}", CustomerDto.class, params);
+            System.out.println("Successfully signed in.");
+        } catch (RestClientException ex) {
             System.out.println("Customer not found.");
-        } else {
-            System.out.println("Successfully signed in");
-            this.currentCustomer = response.getBody();
         }
     }
 
@@ -65,7 +64,7 @@ public class ShellCommands {
         if (this.currentCustomer != null) {
             System.out.println(this.currentCustomer);
         } else {
-            System.out.println("No customer signed in");
+            System.out.println("No customer signed in.");
         }
     }
 
@@ -82,10 +81,13 @@ public class ShellCommands {
     public void listArticles(@ShellOption(value = {"-t", "--term"}, defaultValue = "") String term) {
         Map<String, String> params = new HashMap<>();
         params.put("term", term);
-        var response = restTemplate.getForEntity("/articles/filter?term={term}", ArticleDto[].class, params);
-
-        for (var article : Objects.requireNonNull(response.getBody())) {
-            System.out.println(article);
+        try {
+            var articles = restTemplate.getForObject("/articles/filter?term={term}", ArticleDto[].class, params);
+            for (var article : Objects.requireNonNull(articles)) {
+                System.out.println(article);
+            }
+        } catch (RestClientException ex) {
+            System.out.println("Loading of articles failed.");
         }
     }
 
@@ -108,11 +110,21 @@ public class ShellCommands {
                 BidStatus.Offered
         );
 
-        var response = restTemplate.postForEntity("/articles", article, ArticleDto.class);
-        if (response.getStatusCode() == HttpStatus.OK) {
-            System.out.println("Article successfully created.");
-        } else {
+        try {
+            var response = restTemplate.postForObject("/articles", article, ArticleDto.class);
+            System.out.printf("Article successfully created with id %d.%n", Objects.requireNonNull(response).getId());
+        } catch (RestClientException ex) {
             System.out.println("Article could not be created.");
+        }
+    }
+
+    @ShellMethod("Close bid.")
+    public void closeBid(@ShellOption({"-a", "--article-id"}) long articleId) {
+        try {
+            restTemplate.put("/articles/close-bid", articleId);
+            System.out.println("Bidding for article successfully closed.");
+        } catch (RestClientException ex) {
+            System.out.println("Bidding could not be closed.");
         }
     }
 
@@ -127,11 +139,11 @@ public class ShellCommands {
                 articleId
         );
 
-        var response = restTemplate.postForEntity("/bids", bid, Object.class);
-        if (response.getStatusCode() == HttpStatus.OK) {
+        try {
+            var response = restTemplate.postForObject("/bids", bid, BidDto.class);
             System.out.println("Bid successfully created.");
-        } else {
-            System.out.println("Bid could not be created");
+        } catch (RestClientException ex) {
+            System.out.println("Bid could not be created.");
         }
     }
 
@@ -140,6 +152,10 @@ public class ShellCommands {
     }
 
     public Availability addArticleAvailability() {
+        return currentCustomer != null ? Availability.available() : Availability.unavailable("Must be signed in first.");
+    }
+
+    public Availability closeBidAvailability() {
         return currentCustomer != null ? Availability.available() : Availability.unavailable("Must be signed in first.");
     }
 }

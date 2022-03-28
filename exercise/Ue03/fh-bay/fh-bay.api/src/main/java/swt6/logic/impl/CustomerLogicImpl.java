@@ -1,6 +1,5 @@
 package swt6.logic.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import swt6.dal.dao.CustomerDao;
@@ -14,8 +13,11 @@ import java.util.Optional;
 @Transactional
 public class CustomerLogicImpl implements CustomerLogic {
 
-    @Autowired
-    private CustomerDao customerDao;
+    private final CustomerDao customerDao;
+
+    public CustomerLogicImpl(CustomerDao customerDao) {
+        this.customerDao = customerDao;
+    }
 
     @Transactional(readOnly = true)
     @Override

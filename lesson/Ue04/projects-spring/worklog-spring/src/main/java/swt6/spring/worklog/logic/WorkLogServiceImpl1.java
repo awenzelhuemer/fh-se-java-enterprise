@@ -16,19 +16,16 @@ public class WorkLogServiceImpl1 implements WorkLogService {
         this.employeeDao = employeeDao;
     }
 
-    @Transactional
     @Override
     public Employee syncEmployee(Employee employee) {
         return employeeDao.merge(employee);
     }
 
-    @Transactional
     @Override
     public Optional<Employee> findEmployeeById(Long id) {
         return employeeDao.findById(id);
     }
 
-    @Transactional(readOnly = true)
     @Override
     public List<Employee> findAllEmployees() {
         return employeeDao.findAll();

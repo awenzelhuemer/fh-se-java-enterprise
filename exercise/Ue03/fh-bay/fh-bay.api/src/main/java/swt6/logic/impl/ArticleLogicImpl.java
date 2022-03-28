@@ -2,15 +2,14 @@ package swt6.logic.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import swt6.dal.dao.ArticleDao;
 import swt6.dal.dao.BidDao;
 import swt6.dal.domain.Article;
 import swt6.dal.domain.Bid;
-import swt6.dto.BidStatus;
 import swt6.dal.domain.Customer;
+import swt6.dto.BidStatus;
 import swt6.logic.ArticleLogic;
 
 import java.time.LocalDateTime;
@@ -19,17 +18,25 @@ import java.util.List;
 @Service
 public class ArticleLogicImpl implements ArticleLogic {
 
-    @Autowired
-    private BidDao bidDao;
-    @Autowired
-    private ArticleDao articleDao;
+    private final Logger logger = LoggerFactory.getLogger(ArticleLogicImpl.class);
+
+    private final BidDao bidDao;
+    private final ArticleDao articleDao;
+
+    public ArticleLogicImpl(BidDao bidDao, ArticleDao articleDao) {
+        this.bidDao = bidDao;
+        this.articleDao = articleDao;
+    }
+
+    @Override
+    public boolean exists(long articleId) {
+        return articleDao.existsById(articleId);
+    }
 
     @Override
     public Article insert(Article article) {
         return articleDao.save(article);
     }
-
-    private final Logger logger = LoggerFactory.getLogger(ArticleLogicImpl.class);
 
     @Override
     public Article assignSeller(long articleId, Customer seller) {
@@ -40,7 +47,7 @@ public class ArticleLogicImpl implements ArticleLogic {
         }
 
         article.get().setSeller(seller);
-        return articleDao.save(article.get());
+        return articleDao.saveAndFlush(article.get());
     }
 
     @Override
@@ -52,7 +59,7 @@ public class ArticleLogicImpl implements ArticleLogic {
         }
 
         article.get().setBuyer(buyer);
-        return articleDao.save(article.get());
+        return articleDao.saveAndFlush(article.get());
     }
 
     @Override
@@ -67,23 +74,36 @@ public class ArticleLogicImpl implements ArticleLogic {
 
         var previousBid = bidDao.findFirstByArticleOrderByAmountDesc(article);
 
-        if (previousBid.isPresent() && article.getCurrentPrice() >= amount) {
+        if (previousBid.isPresent() && amount <= previousBid.get().getAmount()) {
             throw new IllegalArgumentException("Amount needs to be higher than previous bid.");
+        } else if(amount < article.getInitialPrice()) {
+            throw new IllegalArgumentException("Amount needs to be set to the initial price or higher.");
         }
 
         // Bid was from same customer so only amount needs to be refreshed
-        if (previousBid.isPresent() && previousBid.get().getBidder() == bidder) {
+        if (previousBid.isPresent() && previousBid.get().getBidder().getId().equals(bidder.getId())) {
             previousBid.get().setAmount(amount);
             previousBid.get().setTimestamp(LocalDateTime.now());
-            bidDao.save(previousBid.get());
+            bidDao.saveAndFlush(previousBid.get());
         } else {
             Bid bid = new Bid(amount, LocalDateTime.now(), bidder, article);
-            bidDao.save(bid);
+            bidDao.saveAndFlush(bid);
             article.setBidder(bidder);
             article.setCurrentPrice(previousBid.map(Bid::getAmount)
                     .orElseGet(article::getInitialPrice));
-            articleDao.save(article);
+            articleDao.saveAndFlush(article);
         }
+    }
+
+    @Override
+    public void finalizeBidding(long articleId) {
+        var article = articleDao.findById(articleId).orElseThrow();
+
+        validateArticleStatus(article);
+
+        article.setEnd(LocalDateTime.now());
+
+        articleDao.save(article);
     }
 
     @Scheduled(fixedDelay = 10000, initialDelay = 0)
