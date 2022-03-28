@@ -4,7 +4,7 @@
 
 ### With config file
 
-````xml
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans>
     <bean id="workLog" class="swt6.spring.basics.aop.logic.WorkLogServiceImpl" />
