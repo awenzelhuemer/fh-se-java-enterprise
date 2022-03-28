@@ -13,6 +13,8 @@ public class TraceAdvice {
     private static TraceOptions mixin;
 
     private boolean isTracingEnabledInProxy(JoinPoint joinPoint) {
+        System.out.println("isTracingEnabledInProxy");
+        System.out.println(joinPoint.getThis().getClass().getName());
         return ((TraceOptions)joinPoint.getThis()).isTracingEnabled();
     }
 
