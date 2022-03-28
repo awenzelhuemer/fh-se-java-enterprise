@@ -1,8 +1,8 @@
 # Kurztest 2
 
-## Aspect oriented programming (AOP)
+## 1. Aspect oriented programming (AOP)
 
-### With config file
+### 1.1. With config file
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -26,7 +26,7 @@
 </beans>
 ```
 
-### With annotations
+### 1.2. With annotations
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -47,3 +47,18 @@ private void findMethods() {}
 @Around("findMethods()")
 @AfterThrowing(pointcut = "findMethods()", throwing = "exception")
 ```
+
+## 2. Spring Data
+
+### 2.1. With JdbcTemplate
+
+Query
+`var employeeList = jdbcTemplate.query(sql, new EmployeeRowMapper(), id);`
+
+Query single object
+`var employee = jdbcTemplate.queryForObject(sql, new EmployeeRowMapper(), id);`
+
+Update or insert
+`jdbcTemplate.update(sql, e.getFirstName(), e.getLastName(), Date.valueOf(e.getDateOfBirth()));`
+
+## 3. Spring Web
