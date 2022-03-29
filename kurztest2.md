@@ -49,6 +49,20 @@ private void findMethods() {}
 
 ### 2.1. With JdbcTemplate
 
+Insert with keyholder
+```java
+KeyHolder keyHolder = new GeneratedKeyHolder();
+jdbcTemplate.update(con -> {
+    PreparedStatement ps = con.prepareStatement(sql, new String[]{"ID"});
+    ps.setString(1, e.getFirstName());
+    ps.setString(2, e.getLastName());
+    ps.setDate(3, Date.valueOf(e.getDateOfBirth()));
+    ps.executeUpdate();
+    return ps;
+}, keyHolder);
+e.setId(keyHolder.getKey().longValue());
+```
+
 Query
 
 `var employeeList = jdbcTemplate.query(sql, new EmployeeRowMapper(), id);`
